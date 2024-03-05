@@ -17,6 +17,10 @@ const RnPdtToImage = NativeModules.RnPdtToImage
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RnPdtToImage.multiply(a, b);
+type Props = {
+  files: string[] | undefined;
+};
+
+export function onPdtToImages(base64: string, dpi: number): Promise<Props> {
+  return RnPdtToImage.onPdtToImages(base64, dpi);
 }
